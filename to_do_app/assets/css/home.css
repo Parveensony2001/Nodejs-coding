@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(217, 166, 218);
+    display: flex;
+    justify-content: center;
+}
+.container-todo{
+    background-color: rgb(216, 189, 154);
+    height: 80vh;
+    width: 50vw;
+    position: relative;
+    top:10vh;
+    overflow: scroll;
+    padding: 1vh;
+}
+.Description{
+    border: 0px;
+    position: relative;
+    left: 0px;
+    margin: 2vh 0vh;
+    padding: 0px;
+    height: 4vh;
+    width: 100%;
+    background-color: transparent;
+}
+.box1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.option-first{
+    border-right: 1.3px solid black;
+}
+.box2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#select{
+    background-color: green;
+    height: 11vh;
+    width: 18vw;
+    border: 0px;
+    margin: 2vh;
+}
+#delete{
+    background-color: red;
+    height: 11vh;
+    width: 18vw;
+    border: 0px;
+    margin: 2vh;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#checkbox{
+    background-color: transparent;
+    border: 1px solid black;
+}

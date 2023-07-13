@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>
+            <%= locals.title%>
+        </title>
+       
+        <link rel="stylesheet" href="/css/home.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+    </head>
+    <body>
+        <form method="post" action="/create-contact" class="container-todo">
+            <h1 class="heading"style="text-align: center;">TO_DO APP</h1>
+            <hr>
+            <p>Description</p>
+            <input type="text" name="Description"class="Description" placeholder="what do you need to do" >
+            <hr>
+            <div class="box1">
+                <div class="option-first">
+                    <p>Category</p>
+            <input type="text" name="Category"class="Description" style="width: 13.5vw;" id="displayBar"placeholder="Choose a category" required>
+              <select  id="mySelect"onchange="displaySelectedOption()">
+                <option value="Option">Option</option>
+                <option value="Student">Student</option>
+                <option value="School">School</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Another">Another</option>
+              </select>
+                    </div>
+                <div class="option-second">
+                    <p>Due-date</p>
+                    <input type="date" id="Category" name="Date"class="Description"placeholder="Choose a category" required>
+                </div>
+            </div>
+            <hr>
+            <div class="box2">
+                <button type="submit" id="select"><i class="bi bi-plus-lg"></i>ADD TASK</button>
+            
+    <button id="delete" type="button"><i class="bi bi-trash3-fill"></i>DELETE TASK</button>
+
+            </div>
+            <hr>
+            <ul id="itemList">
+                <% for (let i of contact_list) { %> 
+                <div class="container">    
+                    <li>
+                        <p><%= i.Description %>(Description),<%=i.Category%>(Category) And <%= i.Date %>(Date)</p>
+                    </li>
+                    <input type="checkbox" id="checkbox"name="delechack" class="delechack" onclick="checkedOrNot()" uid = <%= i._id %> >
+                    </div>
+                    <hr>
+                <% } %>
+            </ul>
+        </form>
+        <script type="text/javascript" src="/js/home.js"></script>
+    </body>
+</html>
